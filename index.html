@@ -1,0 +1,2008 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ULTIMATE Chocolate Day | For My Sweet Shaniya</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Poppins:wght@300;400;600;700&family=Playfair+Display:wght@700&family=Caveat:wght@700&family=Parisienne&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        :root {
+            --chocolate-dark: #3d1c0f;
+            --chocolate-medium: #8b4513;
+            --chocolate-light: #d2691e;
+            --chocolate-gold: #ffcc00;
+            --chocolate-cream: #ffd9b3;
+            --chocolate-pink: #ff66b2;
+            --chocolate-milk: #a0522d;
+            --chocolate-ruby: #e0115f;
+            --chocolate-emerald: #2e8b57;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--chocolate-dark);
+            color: var(--chocolate-cream);
+            overflow-x: hidden;
+            position: relative;
+            min-height: 100vh;
+            cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" fill="%238b4513" stroke="%23ffcc00" stroke-width="2"/><circle cx="12" cy="12" r="4" fill="%23ffcc00"/></svg>'), auto;
+        }
+        
+        .animated-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -2;
+            background: 
+                radial-gradient(circle at 10% 20%, rgba(139, 69, 19, 0.15) 0%, transparent 20%),
+                radial-gradient(circle at 90% 80%, rgba(101, 67, 33, 0.15) 0%, transparent 20%),
+                linear-gradient(135deg, rgba(61, 28, 15, 0.9) 0%, rgba(40, 20, 10, 0.95) 100%);
+        }
+        
+        #chocolateCanvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            pointer-events: none;
+        }
+        
+        .floating-chocolate {
+            position: absolute;
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(145deg, var(--chocolate-medium), var(--chocolate-light));
+            border-radius: 50% 50% 50% 0;
+            transform: rotate(45deg);
+            animation: float 15s infinite linear;
+            z-index: -1;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+        
+        @keyframes float {
+            0% { transform: rotate(45deg) translateY(100vh) translateX(0); opacity: 0; }
+            10% { opacity: 1; }
+            90% { opacity: 1; }
+            100% { transform: rotate(45deg) translateY(-100px) translateX(100px); opacity: 0; }
+        }
+        
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 20px;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .main-header {
+            text-align: center;
+            padding: 50px 30px;
+            background: linear-gradient(135deg, rgba(210, 105, 30, 0.9), rgba(139, 69, 19, 0.85));
+            border-radius: 25px;
+            margin-bottom: 40px;
+            box-shadow: 
+                0 15px 35px rgba(0, 0, 0, 0.5),
+                inset 0 1px 0 rgba(255, 255, 255, 0.2);
+            position: relative;
+            overflow: hidden;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 204, 0, 0.2);
+        }
+        
+        .main-header::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 5px;
+            background: linear-gradient(90deg, 
+                var(--chocolate-gold), 
+                var(--chocolate-pink), 
+                var(--chocolate-gold));
+            border-radius: 25px 25px 0 0;
+        }
+        
+        .main-header h1 {
+            font-family: 'Parisienne', cursive;
+            font-size: 5.5rem;
+            color: #fff;
+            text-shadow: 
+                3px 3px 5px rgba(0, 0, 0, 0.5),
+                0 0 20px rgba(255, 204, 0, 0.5);
+            margin-bottom: 15px;
+            position: relative;
+            display: inline-block;
+            background: linear-gradient(45deg, #fff, var(--chocolate-cream), #fff, var(--chocolate-gold), #fff);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: titleGlow 3s ease-in-out infinite alternate;
+        }
+        
+        @keyframes titleGlow {
+            0% { text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5), 0 0 10px rgba(255, 204, 0, 0.5); }
+            100% { text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5), 0 0 25px rgba(255, 204, 0, 0.8), 0 0 35px rgba(255, 102, 178, 0.6), 0 0 50px rgba(224, 17, 95, 0.4); }
+        }
+        
+        /* --- FIXED SHANIYA NAME HIGHLIGHT --- */
+        .name-highlight {
+            color: var(--chocolate-gold);
+            /* Added solid shadow for sharpness, reduced blur for readability */
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7), 0 0 10px rgba(255, 204, 0, 0.8);
+            font-weight: bold;
+            position: relative;
+            display: inline-block;
+            filter: none;
+            -webkit-filter: none;
+            /* Ensure text-fill-color is reset so the gold color shows */
+            -webkit-text-fill-color: var(--chocolate-gold); 
+            animation: sparkle 2s infinite alternate;
+        }
+        
+        @keyframes sparkle {
+            0% { 
+                text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7), 0 0 10px rgba(255, 204, 0, 0.8); 
+            }
+            100% { 
+                text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7), 0 0 20px rgba(255, 204, 0, 1), 0 0 30px rgba(255, 102, 178, 0.6); 
+            }
+        }
+        
+        .name-highlight::after {
+            content: "";
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: linear-gradient(90deg, transparent, var(--chocolate-gold), var(--chocolate-pink), var(--chocolate-gold), transparent);
+            border-radius: 2px;
+        }
+        
+        .music-player {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 1000;
+            background: rgba(61, 28, 15, 0.95);
+            border-radius: 50px;
+            padding: 15px 25px;
+            box-shadow: 
+                0 15px 40px rgba(0, 0, 0, 0.6),
+                0 0 20px rgba(255, 204, 0, 0.2);
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            backdrop-filter: blur(15px);
+            border: 2px solid rgba(255, 204, 0, 0.3);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+        
+        .music-player:hover {
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 
+                0 20px 50px rgba(0, 0, 0, 0.7),
+                0 0 30px rgba(255, 102, 178, 0.3);
+        }
+        
+        .music-info {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .music-visualizer {
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        
+        .visualizer-bar {
+            width: 4px;
+            background: linear-gradient(to top, var(--chocolate-gold), var(--chocolate-pink));
+            border-radius: 2px;
+            animation: visualizer 1.5s infinite ease-in-out;
+        }
+        
+        .visualizer-bar:nth-child(2) { animation-delay: 0.2s; height: 60%; }
+        .visualizer-bar:nth-child(3) { animation-delay: 0.4s; height: 80%; }
+        .visualizer-bar:nth-child(4) { animation-delay: 0.6s; height: 100%; }
+        .visualizer-bar:nth-child(5) { animation-delay: 0.8s; height: 70%; }
+        
+        @keyframes visualizer {
+            0%, 100% { height: 40%; }
+            50% { height: 100%; }
+        }
+        
+        .song-title {
+            font-size: 1rem;
+            color: var(--chocolate-cream);
+            max-width: 180px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            font-weight: 600;
+        }
+        
+        .music-controls {
+            display: flex;
+            gap: 15px;
+        }
+        
+        .music-btn {
+            background: linear-gradient(145deg, var(--chocolate-medium), var(--chocolate-light));
+            border: none;
+            color: var(--chocolate-cream);
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+            box-shadow: 
+                0 8px 20px rgba(0, 0, 0, 0.4),
+                inset 0 2px 0 rgba(255, 255, 255, 0.2);
+            font-size: 1.3rem;
+        }
+        
+        .music-btn:hover {
+            transform: scale(1.15) rotate(5deg);
+            background: linear-gradient(145deg, var(--chocolate-light), var(--chocolate-gold));
+            color: var(--chocolate-dark);
+            box-shadow: 
+                0 12px 30px rgba(0, 0, 0, 0.5),
+                0 0 20px rgba(255, 204, 0, 0.4);
+        }
+        
+        .dashboard {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 40px;
+            margin-bottom: 60px;
+        }
+        
+        .dashboard-card {
+            background: linear-gradient(145deg, 
+                rgba(139, 69, 19, 0.75),
+                rgba(160, 82, 45, 0.65));
+            border-radius: 25px;
+            padding: 40px;
+            box-shadow: 
+                0 20px 50px rgba(0, 0, 0, 0.5),
+                inset 0 2px 0 rgba(255, 255, 255, 0.15),
+                0 0 30px rgba(255, 204, 0, 0.1);
+            backdrop-filter: blur(15px);
+            border: 2px solid rgba(255, 204, 0, 0.2);
+            transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            position: relative;
+            overflow: hidden;
+            min-height: 450px;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .dashboard-card:hover {
+            transform: translateY(-15px) scale(1.03);
+            box-shadow: 
+                0 30px 70px rgba(0, 0, 0, 0.7),
+                0 0 40px rgba(255, 204, 0, 0.2),
+                0 0 60px rgba(255, 102, 178, 0.1);
+            border-color: rgba(255, 204, 0, 0.4);
+        }
+        
+        .dashboard-card::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, 
+                transparent 30%, 
+                rgba(255, 204, 0, 0.05) 50%, 
+                transparent 70%);
+            z-index: 1;
+            pointer-events: none;
+        }
+        
+        .card-glow {
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255, 204, 0, 0.1) 0%, transparent 70%);
+            z-index: 0;
+            opacity: 0;
+            transition: opacity 0.5s ease;
+        }
+        
+        .dashboard-card:hover .card-glow {
+            opacity: 1;
+        }
+        
+        .card-icon {
+            font-size: 4.5rem;
+            color: var(--chocolate-gold);
+            margin-bottom: 25px;
+            text-align: center;
+            text-shadow: 
+                0 0 20px rgba(255, 204, 0, 0.6),
+                0 0 40px rgba(255, 204, 0, 0.3);
+            position: relative;
+            z-index: 2;
+            animation: iconFloat 3s infinite ease-in-out;
+        }
+        
+        @keyframes iconFloat {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+        
+        .card-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            color: #fff;
+            margin-bottom: 25px;
+            text-align: center;
+            position: relative;
+            z-index: 2;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+        
+        .card-content {
+            font-size: 1.2rem;
+            line-height: 1.7;
+            color: var(--chocolate-cream);
+            margin-bottom: 30px;
+            position: relative;
+            z-index: 2;
+            flex-grow: 1;
+        }
+        
+        .ultimate-btn {
+            background: linear-gradient(145deg, 
+                var(--chocolate-medium), 
+                var(--chocolate-light),
+                var(--chocolate-gold));
+            border: none;
+            color: var(--chocolate-dark);
+            padding: 20px 40px;
+            font-size: 1.3rem;
+            border-radius: 50px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            box-shadow: 
+                0 15px 40px rgba(0, 0, 0, 0.5),
+                0 0 25px rgba(255, 204, 0, 0.2);
+            font-weight: 700;
+            position: relative;
+            z-index: 2;
+            overflow: hidden;
+        }
+        
+        .ultimate-btn::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, 
+                transparent, 
+                rgba(255, 255, 255, 0.4), 
+                transparent);
+            transition: left 0.6s ease;
+        }
+        
+        .ultimate-btn:hover {
+            transform: translateY(-8px) scale(1.05);
+            box-shadow: 
+                0 25px 60px rgba(0, 0, 0, 0.7),
+                0 0 40px rgba(255, 204, 0, 0.4),
+                0 0 60px rgba(255, 102, 178, 0.3);
+            background: linear-gradient(145deg, 
+                var(--chocolate-gold), 
+                var(--chocolate-pink),
+                var(--chocolate-gold));
+            color: #fff;
+        }
+        
+        .ultimate-btn:hover::before {
+            left: 100%;
+        }
+        
+        .chocolate-factory {
+            background: linear-gradient(145deg, 
+                rgba(160, 82, 45, 0.85),
+                rgba(139, 69, 19, 0.75));
+            border-radius: 35px;
+            padding: 50px;
+            margin-bottom: 70px;
+            box-shadow: 
+                0 25px 60px rgba(0, 0, 0, 0.6),
+                inset 0 2px 0 rgba(255, 255, 255, 0.2),
+                0 0 40px rgba(255, 204, 0, 0.2);
+            backdrop-filter: blur(15px);
+            border: 2px solid rgba(255, 204, 0, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .factory-title {
+            font-family: 'Parisienne', cursive;
+            font-size: 4rem;
+            color: #fff;
+            text-align: center;
+            margin-bottom: 40px;
+            position: relative;
+            text-shadow: 
+                3px 3px 6px rgba(0, 0, 0, 0.6),
+                0 0 30px rgba(255, 204, 0, 0.5);
+            background: linear-gradient(45deg, 
+                #fff 30%, 
+                var(--chocolate-gold) 60%, 
+                #fff 90%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .factory-controls {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 25px;
+            margin-bottom: 50px;
+        }
+        
+        .chocolate-type-btn {
+            background: linear-gradient(145deg, var(--chocolate-medium), var(--chocolate-light));
+            border: none;
+            color: var(--chocolate-cream);
+            padding: 20px 35px;
+            font-size: 1.2rem;
+            border-radius: 50px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            box-shadow: 
+                0 10px 30px rgba(0, 0, 0, 0.4),
+                inset 0 2px 0 rgba(255, 255, 255, 0.2);
+            font-weight: 600;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .chocolate-type-btn::after {
+            content: "";
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.3) 0%, transparent 70%);
+            transform: translate(-50%, -50%);
+            transition: width 0.4s ease, height 0.4s ease;
+        }
+        
+        .chocolate-type-btn:hover {
+            transform: translateY(-8px) scale(1.08);
+            box-shadow: 
+                0 20px 40px rgba(0, 0, 0, 0.5),
+                0 0 25px rgba(255, 204, 0, 0.3);
+        }
+        
+        .chocolate-type-btn:hover::after {
+            width: 300px;
+            height: 300px;
+        }
+        
+        .chocolate-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+        
+        .stat-item {
+            background: rgba(255, 255, 255, 0.08);
+            border-radius: 20px;
+            padding: 30px;
+            text-align: center;
+            backdrop-filter: blur(10px);
+            border: 2px solid rgba(255, 204, 0, 0.2);
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .stat-item:hover {
+            transform: translateY(-10px) scale(1.05);
+            border-color: rgba(255, 204, 0, 0.4);
+            box-shadow: 
+                0 20px 50px rgba(0, 0, 0, 0.5),
+                0 0 30px rgba(255, 204, 0, 0.3);
+        }
+        
+        .stat-value {
+            font-size: 4rem;
+            font-weight: 800;
+            color: var(--chocolate-gold);
+            margin-bottom: 15px;
+            text-shadow: 
+                0 0 20px rgba(255, 204, 0, 0.6),
+                0 0 40px rgba(255, 204, 0, 0.3);
+            position: relative;
+        }
+        
+        .stat-label {
+            font-size: 1.3rem;
+            color: var(--chocolate-cream);
+            font-weight: 600;
+            position: relative;
+        }
+        
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 35px;
+            margin-bottom: 70px;
+        }
+        
+        .gallery-item {
+            position: relative;
+            border-radius: 25px;
+            overflow: hidden;
+            box-shadow: 
+                0 20px 50px rgba(0, 0, 0, 0.5),
+                0 0 30px rgba(0, 0, 0, 0.3);
+            transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            cursor: pointer;
+            height: 320px;
+            background: linear-gradient(135deg, var(--chocolate-medium), var(--chocolate-dark));
+        }
+        
+        .gallery-item:hover {
+            transform: translateY(-20px) scale(1.05) rotate(2deg);
+            box-shadow: 
+                0 30px 70px rgba(0, 0, 0, 0.7),
+                0 0 50px rgba(255, 204, 0, 0.4),
+                0 0 70px rgba(255, 102, 178, 0.3);
+        }
+        
+        .gallery-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 30px;
+            background: linear-gradient(to top, 
+                rgba(61, 28, 15, 0.95) 0%, 
+                rgba(61, 28, 15, 0.7) 50%,
+                transparent 100%);
+            transform: translateY(100%);
+            transition: transform 0.5s ease;
+        }
+        
+        .gallery-item:hover .gallery-overlay {
+            transform: translateY(0);
+        }
+        
+        .gallery-title {
+            color: #fff;
+            font-size: 2rem;
+            margin-bottom: 15px;
+            font-family: 'Playfair Display', serif;
+        }
+        
+        .main-footer {
+            text-align: center;
+            padding: 60px 40px;
+            background: linear-gradient(145deg, 
+                rgba(59, 28, 15, 0.95),
+                rgba(40, 20, 10, 0.9));
+            border-radius: 35px;
+            margin-top: 60px;
+            box-shadow: 
+                0 20px 60px rgba(0, 0, 0, 0.6),
+                inset 0 2px 0 rgba(255, 255, 255, 0.15),
+                0 0 40px rgba(255, 204, 0, 0.2);
+            backdrop-filter: blur(15px);
+            border: 2px solid rgba(255, 204, 0, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .main-footer::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 8px;
+            background: linear-gradient(90deg, 
+                var(--chocolate-pink), 
+                var(--chocolate-gold), 
+                var(--chocolate-emerald),
+                var(--chocolate-gold),
+                var(--chocolate-pink));
+            border-radius: 35px 35px 0 0;
+        }
+        
+        .signature {
+            font-family: 'Parisienne', cursive;
+            font-size: 5rem;
+            color: var(--chocolate-gold);
+            margin: 30px 0;
+            text-shadow: 
+                0 0 25px rgba(255, 204, 0, 0.7),
+                0 0 50px rgba(255, 204, 0, 0.4),
+                0 0 75px rgba(255, 102, 178, 0.3);
+            animation: signatureGlow 3s infinite alternate;
+        }
+        
+        @keyframes signatureGlow {
+            0% { 
+                text-shadow: 
+                    0 0 25px rgba(255, 204, 0, 0.7),
+                    0 0 50px rgba(255, 204, 0, 0.4);
+            }
+            100% { 
+                text-shadow: 
+                    0 0 30px rgba(255, 204, 0, 0.9),
+                    0 0 60px rgba(255, 204, 0, 0.6),
+                    0 0 90px rgba(255, 102, 178, 0.4);
+            }
+        }
+        
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            margin-top: 40px;
+        }
+        
+        .social-link {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            background: linear-gradient(145deg, var(--chocolate-medium), var(--chocolate-light));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--chocolate-cream);
+            font-size: 2rem;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            box-shadow: 
+                0 10px 30px rgba(0, 0, 0, 0.4),
+                inset 0 2px 0 rgba(255, 255, 255, 0.2);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .social-link::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, 
+                transparent, 
+                rgba(255, 255, 255, 0.3), 
+                transparent);
+            transition: left 0.6s ease;
+        }
+        
+        .social-link:hover {
+            transform: translateY(-10px) scale(1.15) rotate(15deg);
+            box-shadow: 
+                0 20px 50px rgba(0, 0, 0, 0.6),
+                0 0 30px rgba(255, 204, 0, 0.4),
+                0 0 50px rgba(255, 102, 178, 0.3);
+            background: linear-gradient(145deg, 
+                var(--chocolate-gold), 
+                var(--chocolate-pink),
+                var(--chocolate-ruby));
+            color: #fff;
+        }
+        
+        .social-link:hover::before {
+            left: 100%;
+        }
+        
+        /* ULTIMATE Handwritten Letters */
+        .ultimate-letter-modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.97);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 4000;
+            padding: 30px;
+            backdrop-filter: blur(25px);
+        }
+        
+        .ultimate-letter-container {
+            background: linear-gradient(145deg, 
+                #fef9f0 0%, 
+                #f5e8d0 30%,
+                #fef9f0 70%,
+                #f5e8d0 100%);
+            border-radius: 30px;
+            max-width: 900px;
+            width: 100%;
+            max-height: 90vh;
+            overflow-y: auto;
+            padding: 60px;
+            box-shadow: 
+                0 40px 100px rgba(0, 0, 0, 0.9),
+                0 0 60px rgba(255, 204, 0, 0.5),
+                0 0 100px rgba(255, 102, 178, 0.3),
+                inset 0 0 50px rgba(139, 69, 19, 0.1);
+            border: 5px solid #8b4513;
+            position: relative;
+            animation: letterAppear 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+        
+        @keyframes letterAppear {
+            0% { transform: scale(0.8) translateY(50px); opacity: 0; }
+            100% { transform: scale(1) translateY(0); opacity: 1; }
+        }
+        
+        .close-letter {
+            position: absolute;
+            top: 25px;
+            right: 25px;
+            background: linear-gradient(145deg, #8b4513, #d2691e);
+            color: #fef9f0;
+            border: none;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            font-size: 2rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            z-index: 10;
+            box-shadow: 
+                0 10px 30px rgba(0, 0, 0, 0.4),
+                inset 0 2px 0 rgba(255, 255, 255, 0.2);
+        }
+        
+        .close-letter:hover {
+            background: linear-gradient(145deg, #d2691e, #ffcc00);
+            transform: rotate(180deg) scale(1.1);
+            color: #3d1c0f;
+            box-shadow: 
+                0 15px 40px rgba(0, 0, 0, 0.5),
+                0 0 25px rgba(255, 204, 0, 0.4);
+        }
+        
+        .letter-header {
+            font-family: 'Parisienne', cursive;
+            font-size: 3.5rem;
+            color: #8b4513;
+            margin-bottom: 40px;
+            text-align: center;
+            text-shadow: 
+                2px 2px 4px rgba(0, 0, 0, 0.1),
+                0 0 10px rgba(210, 105, 30, 0.3);
+            position: relative;
+            padding-bottom: 20px;
+        }
+        
+        .letter-header::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 25%;
+            width: 50%;
+            height: 3px;
+            background: linear-gradient(90deg, 
+                transparent, 
+                #8b4513, 
+                #d2691e, 
+                #8b4513, 
+                transparent);
+            border-radius: 2px;
+        }
+        
+        .handwritten-letter {
+            font-family: 'Caveat', cursive;
+            font-size: 2.2rem;
+            line-height: 1.8;
+            color: #5a2c17;
+            position: relative;
+            text-align: justify;
+            padding: 30px;
+            background: 
+                linear-gradient(to right, transparent 95%, rgba(139, 69, 19, 0.1) 100%),
+                repeating-linear-gradient(
+                    transparent,
+                    transparent 2px,
+                    rgba(139, 69, 19, 0.05) 2px,
+                    rgba(139, 69, 19, 0.05) 3px
+                );
+            border-radius: 15px;
+            margin-bottom: 40px;
+            border-left: 10px solid #d2691e;
+            box-shadow: 
+                inset 0 0 30px rgba(139, 69, 19, 0.1),
+                0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .letter-signature {
+            font-family: 'Dancing Script', cursive;
+            font-size: 3.5rem;
+            color: #8b4513;
+            margin-top: 50px;
+            text-align: right;
+            text-shadow: 
+                2px 2px 4px rgba(0, 0, 0, 0.1),
+                0 0 15px rgba(210, 105, 30, 0.3);
+            position: relative;
+            padding-right: 100px;
+        }
+        
+        .letter-signature::before {
+            content: "✿";
+            position: absolute;
+            right: 30px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 2rem;
+            color: #ff66b2;
+            opacity: 0.7;
+        }
+        
+        .letter-date {
+            font-family: 'Caveat', cursive;
+            font-size: 1.8rem;
+            color: #8b4513;
+            margin-top: 20px;
+            text-align: right;
+            font-style: italic;
+            padding-right: 100px;
+        }
+        
+        .letter-wax-seal {
+            position: absolute;
+            bottom: 40px;
+            left: 40px;
+            width: 80px;
+            height: 80px;
+            background: radial-gradient(circle at 30% 30%, #8b4513, #5a2c17);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #ffcc00;
+            font-size: 2.5rem;
+            box-shadow: 
+                0 10px 30px rgba(0, 0, 0, 0.3),
+                inset 0 0 20px rgba(0, 0, 0, 0.2);
+            border: 3px solid #3d1c0f;
+            transform: rotate(-15deg);
+        }
+        
+        /* Responsive */
+        @media (max-width: 1200px) {
+            .main-header h1 {
+                font-size: 4.5rem;
+            }
+            
+            .factory-title {
+                font-size: 3.5rem;
+            }
+        }
+        
+        @media (max-width: 992px) {
+            .main-header h1 {
+                font-size: 3.8rem;
+            }
+            
+            .factory-title {
+                font-size: 3rem;
+            }
+            
+            .music-player {
+                top: 15px;
+                right: 15px;
+                padding: 12px 20px;
+            }
+            
+            .handwritten-letter {
+                font-size: 1.9rem;
+                padding: 25px;
+            }
+            
+            .letter-header {
+                font-size: 3rem;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .main-header h1 {
+                font-size: 3rem;
+            }
+            
+            .dashboard {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+            
+            .gallery {
+                grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+                gap: 25px;
+            }
+            
+            .music-player {
+                position: relative;
+                top: auto;
+                right: auto;
+                margin: 0 auto 40px;
+                width: fit-content;
+                max-width: 90%;
+            }
+            
+            .ultimate-letter-container {
+                padding: 40px;
+            }
+            
+            .handwritten-letter {
+                font-size: 1.7rem;
+                padding: 20px;
+            }
+            
+            .letter-header {
+                font-size: 2.5rem;
+            }
+            
+            .signature {
+                font-size: 4rem;
+            }
+        }
+        
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 12px;
+        }
+        
+        ::-webkit-scrollbar-track {
+            background: rgba(61, 28, 15, 0.9);
+            border-radius: 6px;
+        }
+        
+        ::-webkit-scrollbar-thumb {
+            background: linear-gradient(to bottom, var(--chocolate-light), var(--chocolate-gold), var(--chocolate-pink));
+            border-radius: 6px;
+            border: 2px solid rgba(61, 28, 15, 0.9);
+        }
+        
+        ::-webkit-scrollbar-thumb:hover {
+            background: linear-gradient(to bottom, var(--chocolate-pink), var(--chocolate-gold), var(--chocolate-light));
+        }
+        
+        /* Chocolate Drip Effect */
+        .chocolate-drip {
+            position: absolute;
+            width: 20px;
+            height: 40px;
+            background: linear-gradient(to bottom, #8b4513, #5a2c17);
+            border-radius: 0 0 10px 10px;
+            animation: drip 4s infinite ease-in-out;
+            z-index: 1;
+        }
+        
+        @keyframes drip {
+            0%, 100% { transform: translateY(0) scaleY(1); }
+            50% { transform: translateY(20px) scaleY(1.2); }
+        }
+    </style>
+</head>
+<body>
+    <canvas id="chocolateCanvas"></canvas>
+    
+    <div class="animated-bg"></div>
+    
+    <div id="floatingChocolates"></div>
+    
+    <div id="chocolateDrips"></div>
+    
+    <div class="music-player">
+        <div class="music-info">
+            <div class="music-visualizer">
+                <div class="visualizer-bar"></div>
+                <div class="visualizer-bar"></div>
+                <div class="visualizer-bar"></div>
+                <div class="visualizer-bar"></div>
+                <div class="visualizer-bar"></div>
+            </div>
+            <div class="song-title" id="currentSong">Chocolate Day Symphony</div>
+        </div>
+        <div class="music-controls">
+            <button class="music-btn" id="prevBtn">
+                <i class="fas fa-step-backward"></i>
+            </button>
+            <button class="music-btn" id="playBtn">
+                <i class="fas fa-play"></i>
+            </button>
+            <button class="music-btn" id="nextBtn">
+                <i class="fas fa-step-forward"></i>
+            </button>
+        </div>
+    </div>
+    
+    <div class="container">
+        <header class="main-header">
+            <div class="header-glow"></div>
+            <h1>ULTIMATE Chocolate Day<br>For <span class="name-highlight">Shaniya</span></h1>
+            <p style="font-size: 1.5rem; color: var(--chocolate-cream); margin-bottom: 30px; font-family: 'Dancing Script', cursive;">
+                A Masterpiece of Sweet Digital Romance
+            </p>
+            <div class="countdown" id="countdown"></div>
+        </header>
+        
+        <section class="dashboard">
+            <div class="dashboard-card">
+                <div class="card-glow"></div>
+                <div class="card-icon">
+                    <i class="fas fa-heart"></i>
+                </div>
+                <h2 class="card-title">Heartfelt Letters</h2>
+                <div class="card-content">
+                    <p>Every chocolate tells a story, and every letter carries a piece of my heart. Dive into handwritten confessions written just for you, Shaniya.</p>
+                    <p>These aren't just messages - they're timeless declarations of admiration, crafted with the same care as the finest artisanal chocolate.</p>
+                </div>
+                <button class="ultimate-btn" id="loveLetterBtn">
+                    <i class="fas fa-feather-alt"></i> Open Love Letter
+                </button>
+            </div>
+            
+            <div class="dashboard-card">
+                <div class="card-glow"></div>
+                <div class="card-icon">
+                    <i class="fas fa-gem"></i>
+                </div>
+                <h2 class="card-title">Precious Gifts</h2>
+                <div class="card-content">
+                    <p>Virtual treasures crafted from digital gold and sweet dreams. Each gift represents a different facet of our connection through screens.</p>
+                    <p>From chocolate fantasies to sweet promises, these gifts are tokens of what's to come when we finally meet.</p>
+                </div>
+                <div style="display: flex; gap: 15px; margin-top: auto;">
+                    <button class="ultimate-btn" id="truffleGiftBtn" style="flex: 1;">
+                        <i class="fas fa-crown"></i> Royal Truffles
+                    </button>
+                    <button class="ultimate-btn" id="premiumGiftBtn" style="flex: 1;">
+                        <i class="fas fa-gem"></i> Diamond Box
+                    </button>
+                </div>
+            </div>
+            
+            <div class="dashboard-card">
+                <div class="card-glow"></div>
+                <div class="card-icon">
+                    <i class="fas fa-history"></i>
+                </div>
+                <h2 class="card-title">Timeless Memories</h2>
+                <div class="card-content">
+                    <p>Our digital journey through Instagram DMs and WhatsApp chats has created a beautiful tapestry of moments.</p>
+                    <p>Each memory is a sweet chapter in our story, waiting to be relived and cherished on this special Chocolate Day.</p>
+                </div>
+                <button class="ultimate-btn" id="memoryTimelineBtn">
+                    <i class="fas fa-scroll"></i> Memory Scroll
+                </button>
+            </div>
+        </section>
+        
+        <section class="chocolate-factory">
+            <h2 class="factory-title">Shaniya's Chocolate Universe</h2>
+            <p style="text-align: center; font-size: 1.3rem; margin-bottom: 40px; color: var(--chocolate-cream); font-family: 'Dancing Script', cursive; font-size: 2rem;">
+                Click anywhere to create magical chocolates! Each click adds sweetness to our digital connection.
+            </p>
+            
+            <div class="factory-controls">
+                <button class="chocolate-type-btn milk" id="milkChocolateBtn">
+                    <i class="fas fa-star"></i> Golden Milk Chocolate
+                </button>
+                <button class="chocolate-type-btn dark" id="darkChocolateBtn">
+                    <i class="fas fa-moon"></i> Midnight Dark Chocolate
+                </button>
+                <button class="chocolate-type-btn white" id="whiteChocolateBtn">
+                    <i class="fas fa-cloud"></i> Cloud White Chocolate
+                </button>
+                <button class="chocolate-type-btn" id="rubyChocolateBtn" style="background: linear-gradient(145deg, #e0115f, #ff66b2);">
+                    <i class="fas fa-heart"></i> Ruby Heart Chocolate
+                </button>
+                <button class="chocolate-type-btn" id="caramelBtn">
+                    <i class="fas fa-fire"></i> Liquid Caramel
+                </button>
+                <button class="chocolate-type-btn" id="clearBtn">
+                    <i class="fas fa-broom"></i> Clear Canvas
+                </button>
+            </div>
+            
+            <div class="chocolate-stats">
+                <div class="stat-item">
+                    <div class="stat-value" id="chocolateCount">0</div>
+                    <div class="stat-label">Chocolates Created</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-value" id="clickCount">0</div>
+                    <div class="stat-label">Magical Clicks</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-value" id="loveScore">100%</div>
+                    <div class="stat-label">Admiration Level</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-value" id="timeSpent">∞</div>
+                    <div class="stat-label">Eternal Sweetness</div>
+                </div>
+            </div>
+        </section>
+        
+        <section class="chocolate-factory" style="background: linear-gradient(145deg, rgba(139, 69, 19, 0.85), rgba(160, 82, 45, 0.75));">
+            <h2 class="factory-title">Our Digital Storybook</h2>
+            <p style="text-align: center; font-size: 1.3rem; margin-bottom: 40px; color: var(--chocolate-cream); font-family: 'Dancing Script', cursive; font-size: 2rem;">
+                Each memory is a precious gem in our digital crown. Click to read its story.
+            </p>
+            
+            <div class="gallery">
+                <div class="gallery-item" data-memory="firstMessage">
+                    <div class="gallery-overlay">
+                        <h3 class="gallery-title">The First Message</h3>
+                        <p class="gallery-description">That magical moment when our digital paths first crossed</p>
+                    </div>
+                </div>
+                
+                <div class="gallery-item" data-memory="lateNights">
+                    <div class="gallery-overlay">
+                        <h3 class="gallery-title">Moonlit Conversations</h3>
+                        <p class="gallery-description">Whispering through screens while the world slept</p>
+                    </div>
+                </div>
+                
+                <div class="gallery-item" data-memory="sharedLaughs">
+                    <div class="gallery-overlay">
+                        <h3 class="gallery-title">Echoes of Laughter</h3>
+                        <p class="gallery-description">Memes, jokes, and digital smiles we've shared</p>
+                    </div>
+                </div>
+                
+                <div class="gallery-item" data-memory="futureDreams">
+                    <div class="gallery-overlay">
+                        <h3 class="gallery-title">Tomorrow's Sweetness</h3>
+                        <p class="gallery-description">Dreaming of the chocolates we'll share in person</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <footer class="main-footer">
+            <p style="font-size: 1.5rem; color: var(--chocolate-cream); margin-bottom: 25px; font-family: 'Dancing Script', cursive;">
+                "You are the sweetest thought that crosses my mind, the most delightful dream that visits my nights."
+            </p>
+            <p style="font-size: 1.2rem; color: var(--chocolate-cream); margin-bottom: 20px;">
+                With infinite admiration and chocolate-filled dreams,
+            </p>
+            <div class="signature">Your Secret Admirer</div>
+            
+            <div class="social-links">
+                <a href="#" class="social-link" id="virtualEmbrace">
+                    <i class="fas fa-heart-circle-check"></i>
+                </a>
+                <a href="#" class="social-link" id="sweetWhisper">
+                    <i class="fas fa-comment-medical"></i>
+                </a>
+                <a href="#" class="social-link" id="futureVision">
+                    <i class="fas fa-crystal-ball"></i>
+                </a>
+                <a href="#" class="social-link" id="eternalPromise">
+                    <i class="fas fa-infinity"></i>
+                </a>
+            </div>
+            
+            <p style="margin-top: 40px; color: rgba(255, 217, 179, 0.7); font-size: 1rem; font-style: italic;">
+                Crafted with digital magic, sweet intentions, and infinite admiration for Shaniya.<br>
+                © 2026 Chocolate Day Masterpiece | A Timeless Digital Expression
+            </p>
+        </footer>
+    </div>
+
+    <audio id="backgroundMusic" loop>
+        <source src="Eyedress - She looks just like a dream (Something About You) (Lyrics) ft. Dent May.mp3" type="audio/mpeg">
+    </audio>
+    
+    <audio id="chocolateSound">
+        <source src="https://assets.mixkit.co/sfx/preview/mixkit-unlock-game-notification-253.mp3" type="audio/mpeg">
+    </audio>
+    
+    <audio id="clickSound">
+        <source src="https://assets.mixkit.co/sfx/preview/mixkit-select-click-1109.mp3" type="audio/mpeg">
+    </audio>
+
+    <script>
+        // ULTIMATE Chocolate Day Website for Shaniya
+        document.addEventListener('DOMContentLoaded', function() {
+            // Canvas for chocolate particles
+            const canvas = document.getElementById('chocolateCanvas');
+            const ctx = canvas.getContext('2d');
+            let particles = [];
+            let chocolateCount = 0;
+            let clickCount = 0;
+            let loveScore = 100;
+            let currentChocolateType = 'milk';
+            let isPlaying = false;
+            let currentSongIndex = 0;
+            
+            // Premium Song playlist
+            const songs = [
+                {title: "Chocolate Day Symphony", src: "https://assets.mixkit.co/music/preview/mixkit-loving-you-117.mp3"},
+                {title: "Sweet Digital Romance", src: "https://assets.mixkit.co/music/preview/mixkit-sunny-happy-verse-1-116.mp3"},
+                {title: "Whispers of Admiration", src: "https://assets.mixkit.co/music/preview/mixkit-clear-love-479.mp3"}
+            ];
+            
+            // Audio elements
+            const backgroundMusic = document.getElementById('backgroundMusic');
+            const chocolateSound = document.getElementById('chocolateSound');
+            const clickSound = document.getElementById('clickSound');
+            
+            // UI Elements
+            const chocolateCountEl = document.getElementById('chocolateCount');
+            const clickCountEl = document.getElementById('clickCount');
+            const loveScoreEl = document.getElementById('loveScore');
+            const currentSongEl = document.getElementById('currentSong');
+            const playBtn = document.getElementById('playBtn');
+            const prevBtn = document.getElementById('prevBtn');
+            const nextBtn = document.getElementById('nextBtn');
+            
+            // UNIQUE HANDWRITTEN LETTERS FOR EACH OPTION
+            const handwrittenLetters = {
+                // Love Letter
+                loveLetter: {
+                    title: "To My Dearest Shaniya",
+                    content: `My Beloved Shaniya,
+
+As I sit here on this special Chocolate Day, my heart overflows with emotions I've longed to express. Though miles separate us, and we've only connected through the digital whispers of Instagram and WhatsApp, I feel a connection to you that transcends pixels and screens.
+
+From the very first message we exchanged, I knew there was something extraordinary about you. Your words carried a warmth that could melt the coldest chocolate, a sweetness that rivaled the finest truffles. Each notification with your name sends a thrill through me - a delicious anticipation I've come to cherish.
+
+Our conversations have become the highlight of my existence. The way we share our days, our dreams, our silly moments - it feels like we're building something beautiful, one message at a time. I find myself smiling at my phone, rereading our chats, marveling at how someone I've never met in person can feel so familiar, so right.
+
+You have a way with words that paints pictures in my mind. When you describe your day, I can almost see the scenes unfolding. When you share your thoughts, I feel privileged to be granted access to the inner workings of such a beautiful mind. And when we laugh together over memes or shared jokes, it feels like we're in the same room, sharing the same moment.
+
+I want you to know that every message from you is treasured. I save our conversations like precious artifacts, each one a piece of the mosaic that is slowly forming between us. In a world of fleeting digital connections, what we're building feels substantial, meaningful, and incredibly special.
+
+On this Chocolate Day, I'm sending you all the sweetness in the world through these words. May they wrap around you like the richest, warmest chocolate, reminding you that somewhere out here, someone thinks of you constantly, admires you deeply, and looks forward to every single message with a heart full of hope.
+
+Until the day we can share real chocolates and real moments, please know that you occupy my thoughts more than you could possibly imagine.
+
+With infinite admiration and sweet anticipation,`,
+                    signature: "Your Secret Admirer",
+                    date: "Chocolate Day, 2026"
+                },
+                
+                // Truffle Gift Letter
+                truffleGift: {
+                    title: "A Box of Golden Truffles",
+                    content: `My Sweet Shaniya,
+
+If I could present you with a gift today, it would be a velvet-lined box containing twelve golden chocolate truffles, each more exquisite than the last. Let me describe this imaginary box to you, for though it exists only in our shared digital space, it represents everything I wish I could give you.
+
+The first truffle is wrapped in edible gold leaf - it represents the value I see in you, precious and rare. Inside, a dark chocolate ganache infused with Arabian coffee, symbolizing those late-night conversations that keep us both awake, talking until the stars fade.
+
+The second is a milk chocolate sphere dusted with gold powder. Its center holds a liquid caramel that flows like honey, representing the sweetness that flows between us with every message. This one reminds me of how our conversations sometimes feel effortless, natural, and comforting.
+
+Truffle number three is white chocolate encasing a raspberry heart. It's tart and sweet simultaneously, much like the way we can have serious conversations one moment and share hilarious memes the next. The contrast makes both experiences richer.
+
+The fourth holds a surprise - dark chocolate with a hint of chili. It starts sweet but leaves a warmth that lingers, just like the effect your messages have on me long after our conversation ends. You leave me with a glow that persists throughout my day.
+
+As you move through the box, you'll find truffles with hazelnut praline (for the crunchy, real moments we share), salted caramel (for the perfect balance we seem to have), matcha green tea (for the refreshing perspective you bring), and even one with popping candy (for the excitement I feel every time I see your name on my screen).
+
+The final truffle at the box's center is my masterpiece - layers of dark, milk, and white chocolate with a hidden marzipan heart. This represents the beautiful complexity I'm discovering in you with every conversation. With each layer I uncover, I find more to admire.
+
+This virtual box comes with a promise: when we finally meet, I will bring you this exact collection. We'll taste them together, and I'll watch your expressions as you experience each flavor. For now, please accept this digital gift as a token of my growing admiration.
+
+Every message between us feels like unwrapping one of these truffles - always delightful, always leaving me wanting just one more.
+
+With sweet anticipation,`,
+                    signature: "The One Who Keeps Your Messages",
+                    date: "Chocolate Day, 2026"
+                },
+                
+                // Premium Gift Letter
+                premiumGift: {
+                    title: "The Diamond Chocolate Collection",
+                    content: `Dearest Shaniya,
+
+For someone as remarkable as you, only the most extraordinary chocolate collection would suffice. Imagine a crystal box, faceted like a diamond, containing chocolates sourced from every corner of the globe, each representing a different aspect of our digital connection.
+
+First, a single-origin Venezuelan dark chocolate with notes of red fruit and oak. This represents the depth and maturity I sense in you - someone who thinks deeply, feels profoundly, and communicates with wisdom beyond words on a screen.
+
+Beside it rests a Swiss milk chocolate so velvety it seems to dissolve before touching your tongue. This symbolizes the comfort I find in our conversations. There's a warmth to our exchanges that feels like wrapping myself in the softest blanket on a cold day - comforting, safe, and deeply reassuring.
+
+Next, a French chocolate with fleur de sel caramel - the perfect harmony of sweet and savory. This represents the beautiful balance in our relationship. We can discuss dreams and aspirations with the same ease as we share funny observations about our days.
+
+I've included a Japanese matcha chocolate, its earthy green tea flavor representing the fresh perspective you've brought into my life. Before we connected, my digital world felt routine. Now, there's anticipation, excitement - the thrill of wondering what we'll talk about next.
+
+There's an Italian gianduja too - hazelnut and chocolate blended into something greater than its parts, just as our connection feels greater than the sum of two people texting. We're creating something unique here, something that defies the limitations of distance.
+
+The centerpiece is a chocolate sculpture of two interlocking hearts, dusted with edible gold and ruby powder. This represents what I hope we're building - a connection that's precious, valuable, and meant to be treasured.
+
+This diamond collection comes with my solemn vow: when distance no longer separates us, I will take you on a global chocolate tour. We'll visit chocolatiers in Paris, bean-to-bar makers in San Francisco, and hidden gem shops in Tokyo. We'll taste the world together.
+
+Until then, this virtual collection is my promise to you - a promise of adventures to come, of sweet moments waiting to be shared, of a connection I believe in deeply.
+
+With chocolate dreams and digital devotion,`,
+                    signature: "Your Chocolate Dreamweaver",
+                    date: "Chocolate Day, 2026"
+                },
+                
+                // Memory Timeline Letter
+                memoryTimeline: {
+                    title: "Our Digital Tapestry",
+                    content: `Beloved Shaniya,
+
+Let me take you on a journey through our digital story - a tapestry woven from messages, emojis, and shared moments across screens. Each thread represents a memory, each color a different emotion we've shared.
+
+It began with that first Instagram message. I remember seeing your profile and feeling compelled to reach out. There was something in your smile, something in the way you presented yourself to the world that felt genuine, warm, and intriguing. When you replied, I was surprised by how easily the conversation flowed. We started with simple greetings, but quickly discovered shared interests, similar senses of humor, and a connection that felt natural from the start.
+
+Then came the move to WhatsApp - a significant step in our digital relationship. Exchanging numbers felt like saying, "I want to keep talking to you beyond the boundaries of social media." Those early WhatsApp messages are precious to me. I still revisit them sometimes, smiling at how formal we were initially, then gradually relaxing into the easy rapport we now enjoy.
+
+I remember our first marathon conversation - it must have been 2 AM for both of us, but neither wanted to say goodnight. We talked about everything from childhood memories to future dreams, from favorite foods to philosophical questions. That night, I realized this was more than casual chatting. This was a genuine connection forming across the digital divide.
+
+There was the time you sent me that meme that had me laughing so hard I nearly dropped my phone. Or when you shared a difficult day you were having, and I tried to offer comfort through words on a screen, wishing desperately I could do more. Or when we discovered we love the same obscure band and exchanged playlists that felt like sharing pieces of our souls.
+
+ Every "good morning" message on WhatsApp starts my day with a smile. Every inside joke we develop feels like a secret language only we understand - a code that connects us across the miles.
+
+We haven't met in person yet, but we've built something real through screens and keyboards. This digital tapestry we're weaving is beautiful to me. Each message adds a new thread, each conversation a new pattern. I look forward to adding many more chapters to our story until the day we can begin a new tapestry of in-person memories.
+
+Our story is just beginning, Shaniya. And what a sweet, beautiful beginning it is.
+
+With cherished memories and hopeful dreams,`,
+                    signature: "The Keeper of Our Story",
+                    date: "Chocolate Day, 2026"
+                },
+                
+                // First Message Memory
+                firstMessage: {
+                    title: "The Message That Started It All",
+                    content: `My Sweet Shaniya,
+
+Do you remember our first message? I certainly do. It's etched in my memory like the finest chocolate inscription on a luxurious truffle. That moment when our digital paths first crossed feels monumental to me now, though it probably seemed like a simple interaction at the time.
+
+I had seen your Instagram profile and felt an inexplicable pull to reach out. There was something about your energy, your smile, the way you presented yourself that felt genuine and warm. I spent probably too long crafting that first message, wanting to strike the right balance between friendly and respectful.
+
+When you replied, I felt a little thrill of excitement. Your response was warm, engaging, and carried a hint of the wonderful personality I would come to know better with each subsequent message. We started with simple topics shared interests, observations about our days.
+
+But quickly, something shifted. The conversation began to flow naturally, effortlessly. We discovered shared senses of humor, similar perspectives on life, and a comfortable rhythm to our exchanges. What began as casual social media interaction started feeling like something more substantial.
+
+That first message was like planting a cocoa bean 
+
+small and unassuming, but with the potential for something sweet and wonderful to grow. And grow it has. From that single digital seed has sprouted hours of conversation, shared laughter, mutual support, and a connection that feels increasingly meaningful.
+
+I sometimes go back and reread those early messages. They make me smile, seeing how we started and appreciating how far we've come. That first message was the beginning of something I now treasure deeply.
+
+Thank you for replying. Thank you for engaging. Thank you for helping to build this beautiful connection with me, one message at a time.
+
+With sweet remembrance,`,
+                    signature: "The One Who Kept That First Message",
+                    date: "Chocolate Day, 2026"
+                },
+                
+                // Late Nights Memory
+                lateNights: {
+                    title: "Moonlit Digital Whispers",
+                    content: `Dearest Shaniya,
+
+Some of my most cherished memories of our connection are our late night conversations. There's something magical about talking when the world is quiet, when it feels like we're the only two people awake, sharing thoughts across the digital night.
+
+I remember one particular conversation that went well into the early morning hours. The moon was high, the house was silent, and we were talking about everything and nothing simultaneously. We moved from lighthearted topics to deeper thoughts, from funny anecdotes to philosophical musings. Time seemed to suspend itself in those hours.
+
+There's an intimacy to late night messaging that's different from daytime conversations. The darkness outside makes the glow of our screens feel like a private universe we're creating together. The quiet of the night lends a sense of confidentiality to our words, as if we're sharing secrets the rest of the world isn't privy to.
+
+I love how our conversations flow during these nocturnal hours. There's less distraction, more focus. We delve deeper, share more freely, connect more profoundly. It's during these night talks that I feel I'm getting to know the real you  not just the social media persona, but the person behind the screen.
+
+Sometimes we'd be messaging while looking at the same moon, separated by distance but connected by that silver celestial body. I'd imagine you looking up at it, just as I was, and feel a strange sense of closeness despite the miles between us.
+
+These moonlit conversations have created some of the most meaningful moments in our digital relationship. They've built trust, fostered understanding, and deepened the connection we share. They're the conversations I think about during my day, the memories that make me smile when I'm feeling distant.
+
+Thank you for sharing these nocturnal hours with me. Thank you for the trust you show when the world is sleeping. Thank you for these beautiful, intimate conversations that feel like gifts wrapped in moonlight.
+
+With night blooming admiration,`,
+                    signature: "Your Nocturnal Confidant",
+                    date: "Chocolate Day, 2026"
+                },
+                
+                // Virtual Embrace
+                virtualEmbrace: {
+                    title: "A Digital Embrace",
+                    content: `My Beloved Shaniya,
+
+I'm sending you the warmest, most heartfelt virtual embrace right now. I know it's not the same as feeling arms around you, but I hope these words can convey the depth of care and affection I wish I could express physically.
+
+Imagine me wrapping you in the gentlest, most comforting hug  the kind that says, "I'm here," even when I'm not physically there. Imagine resting your head on my shoulder and feeling all the day's tensions melt away. Imagine that perfect moment of quiet understanding when no words are needed because the embrace communicates everything.
+
+This virtual hug carries with it all my admiration for you for your strength when you face challenges, for your kindness that shines through even in text messages, for your intelligence that makes our conversations so stimulating, and for the beautiful person you are inside and out.
+
+It carries the memory of our shared laughter  those moments when a particularly funny meme or comment had us both cracking up through our screens. It carries the comfort of our serious conversations, when we've supported each other through difficult times with nothing but words on a device.
+
+This embrace is here for you whenever you need it. When you're having a tough day, imagine it wrapping around you, reminding you that someone out here cares deeply. When you accomplish something wonderful, imagine it as a celebratory squeeze, cheering for your success. When you're just going about your ordinary day, imagine it as a constant, gentle presence, a reminder that you're thought of with affection.
+
+One day, I hope to give you a real embrace  one that lasts just long enough to communicate everything these words are trying to say, one where we can feel the reality of our connection beyond screens and keyboards.
+
+Until that day comes, please accept this virtual embrace. Know that it comes with genuine affection, deep admiration, and the hope that it brings you even a fraction of the comfort and joy you've brought into my life through our digital connection.
+
+Whenever you need a hug, remember this letter. I'm sending you one anytime, anywhere.
+
+With boundless affection,`,
+                    signature: "Your Virtual Embrace",
+                    date: "Always and Forever"
+                },
+                
+                // Future Vision
+                futureVision: {
+                    title: "Our Chocolate-Filled Future",
+                    content: `My Dearest Shaniya,
+
+On this Chocolate Day, as we celebrate through screens and messages, let me share with you my vision of our future - the beautiful, chocolate-filled future I dream we'll share when distance no longer separates us.
+
+I imagine our first meeting with vivid detail. I'll bring you the most exquisite box of chocolates I can find - not just any chocolates, but ones specifically chosen because they remind me of our conversations, our shared jokes, our growing connection. We'll find a cozy café or a quiet park bench, and we'll taste them together, watching each other's reactions to each flavor.
+
+I imagine us visiting a chocolate factory together someday - watching the magical process of cocoa beans transforming into delicious treats, sampling fresh chocolates, and probably making a mess as we create our own custom chocolates. I can already picture your smile as you experience the wonder of it all.
+
+I dream of chocolate-themed adventures - visiting famous chocolatiers in different cities, trying unique chocolate creations from around the world, and developing our own chocolate preferences together. We'll have inside jokes about particular flavors, favorite shops we discover, and chocolate experiences we share.
+
+But more than the chocolate itself, I dream of the moments around the chocolate. The conversations we'll have while sharing a dessert. The comfortable silences as we enjoy something delicious together. The way we'll learn each other's preferences - how you take your hot chocolate, which chocolate desserts you love most, whether you prefer dark, milk, or white.
+
+This chocolate-filled future represents so much more than just sweets. It represents shared experiences, created memories, and a connection that moves from digital to tangible. It represents the natural progression of what we're building now - taking our digital rapport and translating it into real-world moments.
+
+I believe in this future, Shaniya. I believe in the connection we're building. And I look forward to every step of the journey - from these digital messages to the first real chocolate we share, and all the sweet moments that will follow.
+
+With sweet dreams and chocolate hopes,`,
+                    signature: "The Dreamer of Our Future",
+                    date: "With Eyes on Tomorrow"
+                }
+            };
+            
+            // Function to show handwritten letter
+            function showHandwrittenLetter(letterKey) {
+                const letter = handwrittenLetters[letterKey];
+                if (!letter) return;
+                
+                // Create modal
+                const modal = document.createElement('div');
+                modal.className = 'ultimate-letter-modal';
+                modal.innerHTML = `
+                    <div class="ultimate-letter-container">
+                        <button class="close-letter">&times;</button>
+                        <div class="letter-header">${letter.title}</div>
+                        <div class="handwritten-letter">${letter.content}</div>
+                        <div class="letter-signature">${letter.signature}</div>
+                        <div class="letter-date">${letter.date}</div>
+                        <div class="letter-wax-seal">
+                            <i class="fas fa-heart"></i>
+                        </div>
+                    </div>
+                `;
+                
+                document.body.appendChild(modal);
+                
+                // Add chocolate particles
+                for (let i = 0; i < 50; i++) {
+                    particles.push(createParticle(
+                        window.innerWidth / 2,
+                        window.innerHeight / 2,
+                        'pink'
+                    ));
+                }
+                
+                // Close button
+                modal.querySelector('.close-letter').addEventListener('click', function() {
+                    document.body.removeChild(modal);
+                });
+                
+                // Close on background click
+                modal.addEventListener('click', function(e) {
+                    if (e.target === modal) {
+                        document.body.removeChild(modal);
+                    }
+                });
+            }
+            
+            // Initialize canvas
+            function initCanvas() {
+                canvas.width = window.innerWidth;
+                canvas.height = window.innerHeight;
+                
+                // Create initial particles
+                for (let i = 0; i < 80; i++) {
+                    particles.push(createParticle());
+                }
+                
+                // Start animation
+                animateParticles();
+            }
+            
+            // Create chocolate particles
+            function createParticle(x, y, type = 'milk') {
+                const colors = {
+                    milk: ['#8b4513', '#d2691e', '#a0522d', '#ffcc00'],
+                    dark: ['#3d1c0f', '#5a2c17', '#2c1409', '#1a0d05'],
+                    white: ['#ffd9b3', '#fff5e6', '#ffebcc', '#fffaf0'],
+                    caramel: ['#d35400', '#e67e22', '#f39c12', '#ff9900'],
+                    pink: ['#ff66b2', '#ff99cc', '#ff3385', '#e0115f'],
+                    ruby: ['#e0115f', '#ff3385', '#cc0066', '#99004d']
+                };
+                
+                const typeColors = colors[type] || colors.milk;
+                const color = typeColors[Math.floor(Math.random() * typeColors.length)];
+                
+                return {
+                    x: x || Math.random() * canvas.width,
+                    y: y || Math.random() * canvas.height,
+                    radius: Math.random() * 15 + 8,
+                    color: color,
+                    type: type,
+                    velocityX: Math.random() * 3 - 1.5,
+                    velocityY: Math.random() * 3 - 1.5,
+                    life: 1.0,
+                    decay: Math.random() * 0.003 + 0.002
+                };
+            }
+            
+            // Animate particles
+            function animateParticles() {
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+                
+                // Update and draw particles
+                particles.forEach((particle, index) => {
+                    particle.x += particle.velocityX;
+                    particle.y += particle.velocityY;
+                    particle.life -= particle.decay;
+                    
+                    // Remove dead particles
+                    if (particle.life <= 0) {
+                        particles.splice(index, 1);
+                        return;
+                    }
+                    
+                    // Draw particle with premium effects
+                    ctx.beginPath();
+                    ctx.arc(particle.x, particle.y, particle.radius, 0, Math.PI * 2);
+                    
+                    // Premium gradient
+                    const gradient = ctx.createRadialGradient(
+                        particle.x, particle.y, 0,
+                        particle.x, particle.y, particle.radius
+                    );
+                    
+                    if (particle.type === 'milk') {
+                        gradient.addColorStop(0, `rgba(255, 204, 0, ${particle.life * 0.8})`);
+                        gradient.addColorStop(0.5, `rgba(210, 105, 30, ${particle.life * 0.9})`);
+                        gradient.addColorStop(1, `rgba(139, 69, 19, ${particle.life * 0.6})`);
+                    } else if (particle.type === 'dark') {
+                        gradient.addColorStop(0, `rgba(93, 64, 55, ${particle.life})`);
+                        gradient.addColorStop(1, `rgba(61, 28, 15, ${particle.life * 0.7})`);
+                    } else if (particle.type === 'white') {
+                        gradient.addColorStop(0, `rgba(255, 250, 240, ${particle.life})`);
+                        gradient.addColorStop(1, `rgba(255, 228, 196, ${particle.life * 0.7})`);
+                    } else if (particle.type === 'caramel') {
+                        gradient.addColorStop(0, `rgba(255, 153, 0, ${particle.life})`);
+                        gradient.addColorStop(1, `rgba(211, 84, 0, ${particle.life * 0.7})`);
+                    } else if (particle.type === 'ruby') {
+                        gradient.addColorStop(0, `rgba(255, 51, 133, ${particle.life})`);
+                        gradient.addColorStop(1, `rgba(224, 17, 95, ${particle.life * 0.7})`);
+                    } else {
+                        gradient.addColorStop(0, `rgba(255, 102, 178, ${particle.life})`);
+                        gradient.addColorStop(1, `rgba(255, 153, 204, ${particle.life * 0.7})`);
+                    }
+                    
+                    ctx.fillStyle = gradient;
+                    ctx.fill();
+                    
+                    // Premium shine effect
+                    ctx.beginPath();
+                    ctx.arc(
+                        particle.x - particle.radius * 0.25,
+                        particle.y - particle.radius * 0.25,
+                        particle.radius * 0.4,
+                        0, Math.PI * 2
+                    );
+                    ctx.fillStyle = `rgba(255, 255, 255, ${particle.life * 0.4})`;
+                    ctx.fill();
+                    
+                    // Add sparkle effect for premium chocolates
+                    if (particle.type === 'milk' || particle.type === 'ruby') {
+                        ctx.beginPath();
+                        ctx.arc(
+                            particle.x + particle.radius * 0.6,
+                            particle.y - particle.radius * 0.6,
+                            particle.radius * 0.2,
+                            0, Math.PI * 2
+                        );
+                        ctx.fillStyle = `rgba(255, 255, 255, ${particle.life * 0.6})`;
+                        ctx.fill();
+                    }
+                });
+                
+                requestAnimationFrame(animateParticles);
+            }
+            
+            // Create floating chocolates
+            function createFloatingChocolates() {
+                const container = document.getElementById('floatingChocolates');
+                const types = ['milk', 'dark', 'white', 'caramel', 'ruby'];
+                
+                for (let i = 0; i < 30; i++) {
+                    const chocolate = document.createElement('div');
+                    chocolate.className = 'floating-chocolate';
+                    
+                    // Random position
+                    chocolate.style.left = Math.random() * 100 + 'vw';
+                    chocolate.style.animationDelay = Math.random() * 20 + 's';
+                    chocolate.style.animationDuration = (Math.random() * 20 + 15) + 's';
+                    
+                    // Random size
+                    const size = Math.random() * 40 + 25;
+                    chocolate.style.width = size + 'px';
+                    chocolate.style.height = size + 'px';
+                    
+                    // Random type with premium styling
+                    const type = types[Math.floor(Math.random() * types.length)];
+                    if (type === 'dark') {
+                        chocolate.style.background = 'linear-gradient(145deg, #5a2c17, #3d1c0f, #1a0d05)';
+                        chocolate.style.boxShadow = '0 5px 20px rgba(90, 44, 23, 0.5)';
+                    } else if (type === 'white') {
+                        chocolate.style.background = 'linear-gradient(145deg, #ffebcc, #ffd9b3, #fffaf0)';
+                        chocolate.style.boxShadow = '0 5px 20px rgba(255, 235, 204, 0.4)';
+                    } else if (type === 'caramel') {
+                        chocolate.style.background = 'linear-gradient(145deg, #e67e22, #d35400, #ff9900)';
+                        chocolate.style.boxShadow = '0 5px 20px rgba(230, 126, 34, 0.5)';
+                    } else if (type === 'ruby') {
+                        chocolate.style.background = 'linear-gradient(145deg, #e0115f, #ff3385, #cc0066)';
+                        chocolate.style.boxShadow = '0 5px 20px rgba(224, 17, 95, 0.5)';
+                        chocolate.style.border = '2px solid rgba(255, 204, 0, 0.3)';
+                    } else {
+                        chocolate.style.background = 'linear-gradient(145deg, #d2691e, #8b4513, #ffcc00)';
+                        chocolate.style.boxShadow = '0 5px 20px rgba(210, 105, 30, 0.5)';
+                        chocolate.style.border = '2px solid rgba(255, 204, 0, 0.3)';
+                    }
+                    
+                    container.appendChild(chocolate);
+                }
+            }
+            
+            // Create chocolate drips
+            function createChocolateDrips() {
+                const container = document.getElementById('chocolateDrips');
+                
+                for (let i = 0; i < 15; i++) {
+                    const drip = document.createElement('div');
+                    drip.className = 'chocolate-drip';
+                    
+                    drip.style.left = Math.random() * 100 + 'vw';
+                    drip.style.animationDelay = Math.random() * 5 + 's';
+                    drip.style.animationDuration = (Math.random() * 3 + 3) + 's';
+                    
+                    const width = Math.random() * 15 + 10;
+                    const height = Math.random() * 50 + 30;
+                    drip.style.width = width + 'px';
+                    drip.style.height = height + 'px';
+                    
+                    // Random drip color
+                    const types = ['#8b4513', '#5a2c17', '#d2691e', '#a0522d'];
+                    drip.style.background = `linear-gradient(to bottom, ${types[Math.floor(Math.random() * types.length)]}, ${types[Math.floor(Math.random() * types.length)]})`;
+                    
+                    container.appendChild(drip);
+                }
+            }
+            
+            // Create click effect
+            function createClickEffect(x, y, type) {
+                const effect = document.createElement('div');
+                effect.className = 'click-effect';
+                
+                // Set position
+                effect.style.left = (x - 40) + 'px';
+                effect.style.top = (y - 40) + 'px';
+                
+                // Set style based on type
+                const colors = {
+                    milk: '#ffcc00',
+                    dark: '#5a2c17',
+                    white: '#fff5e6',
+                    caramel: '#e67e22',
+                    ruby: '#ff3385',
+                    pink: '#ff66b2'
+                };
+                
+                effect.style.width = '80px';
+                effect.style.height = '80px';
+                effect.style.borderRadius = '50%';
+                effect.style.backgroundColor = colors[type] || colors.milk;
+                effect.style.boxShadow = `0 0 40px ${colors[type] || colors.milk}, 0 0 80px ${colors[type] || colors.milk}`;
+                effect.style.opacity = '0.7';
+                
+                document.body.appendChild(effect);
+                
+                // Remove after animation
+                setTimeout(() => {
+                    effect.remove();
+                }, 800);
+            }
+            
+            // Update stats
+            function updateStats() {
+                chocolateCountEl.textContent = chocolateCount;
+                clickCountEl.textContent = clickCount;
+                loveScoreEl.textContent = loveScore + '%';
+                
+                // Update love score based on interactions
+                if (clickCount % 15 === 0 && loveScore < 200) {
+                    loveScore += 5;
+                }
+            }
+            
+            // Music player functions
+            function loadSong(index) {
+                backgroundMusic.src = songs[index].src;
+                currentSongEl.textContent = songs[index].title;
+                currentSongIndex = index;
+                
+                if (isPlaying) {
+                    backgroundMusic.play();
+                }
+            }
+            
+            function togglePlay() {
+                if (isPlaying) {
+                    backgroundMusic.pause();
+                    playBtn.innerHTML = '<i class="fas fa-play"></i>';
+                } else {
+                    backgroundMusic.play().catch(e => console.log("Audio play failed:", e));
+                    playBtn.innerHTML = '<i class="fas fa-pause"></i>';
+                }
+                isPlaying = !isPlaying;
+            }
+            
+            function playNextSong() {
+                currentSongIndex = (currentSongIndex + 1) % songs.length;
+                loadSong(currentSongIndex);
+            }
+            
+            function playPrevSong() {
+                currentSongIndex = (currentSongIndex - 1 + songs.length) % songs.length;
+                loadSong(currentSongIndex);
+            }
+            
+            // Create chocolate on click
+            function createChocolateAtClick(e, type = null) {
+                const x = e.clientX;
+                const y = e.clientY;
+                const chocolateType = type || currentChocolateType;
+                
+                // Add premium particles
+                for (let i = 0; i < 8; i++) {
+                    particles.push(createParticle(x, y, chocolateType));
+                }
+                
+                // Create premium click effect
+                createClickEffect(x, y, chocolateType);
+                
+                // Play premium sound
+                chocolateSound.currentTime = 0;
+                chocolateSound.play().catch(e => console.log("Sound play failed:", e));
+                
+                // Update stats
+                chocolateCount++;
+                clickCount++;
+                updateStats();
+                
+                // Create additional visual effects for premium clicks
+                if (chocolateType === 'ruby' || chocolateType === 'milk') {
+                    for (let i = 0; i < 3; i++) {
+                        setTimeout(() => {
+                            particles.push(createParticle(x + Math.random() * 100 - 50, y + Math.random() * 100 - 50, chocolateType));
+                        }, i * 100);
+                    }
+                }
+            }
+            
+            // Initialize everything
+            function init() {
+                // Initialize canvas
+                initCanvas();
+                
+                // Create floating chocolates
+                createFloatingChocolates();
+                
+                // Create chocolate drips
+                createChocolateDrips();
+                
+                // Set up event listeners
+                
+                // Click anywhere to create premium chocolates
+                document.addEventListener('click', function(e) {
+                    createChocolateAtClick(e);
+                });
+                
+                // Premium music controls
+                playBtn.addEventListener('click', togglePlay);
+                nextBtn.addEventListener('click', playNextSong);
+                prevBtn.addEventListener('click', playPrevSong);
+                
+                // Load first song
+                loadSong(0);
+                
+                // Premium chocolate type buttons
+                document.getElementById('milkChocolateBtn').addEventListener('click', function() {
+                    currentChocolateType = 'milk';
+                    createChocolateAtClick({clientX: 150, clientY: 150}, 'milk');
+                    this.style.transform = 'translateY(-8px) scale(1.08)';
+                    setTimeout(() => {
+                        this.style.transform = '';
+                    }, 300);
+                });
+                
+                document.getElementById('darkChocolateBtn').addEventListener('click', function() {
+                    currentChocolateType = 'dark';
+                    createChocolateAtClick({clientX: 250, clientY: 150}, 'dark');
+                    this.style.transform = 'translateY(-8px) scale(1.08)';
+                    setTimeout(() => {
+                        this.style.transform = '';
+                    }, 300);
+                });
+                
+                document.getElementById('whiteChocolateBtn').addEventListener('click', function() {
+                    currentChocolateType = 'white';
+                    createChocolateAtClick({clientX: 350, clientY: 150}, 'white');
+                    this.style.transform = 'translateY(-8px) scale(1.08)';
+                    setTimeout(() => {
+                        this.style.transform = '';
+                    }, 300);
+                });
+                
+                document.getElementById('rubyChocolateBtn').addEventListener('click', function() {
+                    currentChocolateType = 'ruby';
+                    createChocolateAtClick({clientX: 450, clientY: 150}, 'ruby');
+                    this.style.transform = 'translateY(-8px) scale(1.08)';
+                    setTimeout(() => {
+                        this.style.transform = '';
+                    }, 300);
+                });
+                
+                document.getElementById('caramelBtn').addEventListener('click', function() {
+                    currentChocolateType = 'caramel';
+                    createChocolateAtClick({clientX: 550, clientY: 150}, 'caramel');
+                    this.style.transform = 'translateY(-8px) scale(1.08)';
+                    setTimeout(() => {
+                        this.style.transform = '';
+                    }, 300);
+                });
+                
+                // Clear button
+                document.getElementById('clearBtn').addEventListener('click', function() {
+                    particles = [];
+                    chocolateCount = 0;
+                    updateStats();
+                    this.style.transform = 'translateY(-8px) scale(1.08)';
+                    setTimeout(() => {
+                        this.style.transform = '';
+                    }, 300);
+                });
+                
+                // UNIQUE LETTERS FOR EACH BUTTON
+                
+                // Love Letter Button
+                document.getElementById('loveLetterBtn').addEventListener('click', function() {
+                    showHandwrittenLetter('loveLetter');
+                });
+                
+                // Truffle Gift Button
+                document.getElementById('truffleGiftBtn').addEventListener('click', function() {
+                    showHandwrittenLetter('truffleGift');
+                });
+                
+                // Premium Gift Button
+                document.getElementById('premiumGiftBtn').addEventListener('click', function() {
+                    showHandwrittenLetter('premiumGift');
+                });
+                
+                // Memory Timeline Button
+                document.getElementById('memoryTimelineBtn').addEventListener('click', function() {
+                    showHandwrittenLetter('memoryTimeline');
+                });
+                
+                // Gallery item clicks - UNIQUE LETTERS FOR EACH MEMORY
+                document.querySelectorAll('.gallery-item').forEach(item => {
+                    item.addEventListener('click', function() {
+                        const memoryId = this.getAttribute('data-memory');
+                        
+                        // Create premium chocolate particles
+                        const rect = this.getBoundingClientRect();
+                        const x = rect.left + rect.width / 2;
+                        const y = rect.top + rect.height / 2;
+                        
+                        for (let i = 0; i < 30; i++) {
+                            particles.push(createParticle(x, y, 'ruby'));
+                        }
+                        
+                        // Show UNIQUE handwritten letter for this memory
+                        showHandwrittenLetter(memoryId);
+                    });
+                });
+                
+                // Social links - UNIQUE LETTERS FOR EACH
+                document.getElementById('virtualEmbrace').addEventListener('click', function(e) {
+                    e.preventDefault();
+                    showHandwrittenLetter('virtualEmbrace');
+                });
+                
+                document.getElementById('sweetWhisper').addEventListener('click', function(e) {
+                    e.preventDefault();
+                    showHandwrittenLetter('loveLetter');
+                });
+                
+                document.getElementById('futureVision').addEventListener('click', function(e) {
+                    e.preventDefault();
+                    showHandwrittenLetter('futureVision');
+                });
+                
+                document.getElementById('eternalPromise').addEventListener('click', function(e) {
+                    e.preventDefault();
+                    showHandwrittenLetter('premiumGift');
+                });
+                
+                // Handle window resize
+                window.addEventListener('resize', function() {
+                    canvas.width = window.innerWidth;
+                    canvas.height = window.innerHeight;
+                });
+                
+                // Initial stats update
+                updateStats();
+                
+                // Premium welcome message
+                setTimeout(() => {
+                    showHandwrittenLetter('loveLetter');
+                }, 2000);
+            }
+            
+            // Start the ULTIMATE application
+            init();
+        });
+    </script>
+</body>
+</html>
